@@ -90,4 +90,4 @@ div:
     src: https:ixabay.org
 ```
 
-MIT Licensed. Enjoy!
+WTFPL licensed. Enjoy!
