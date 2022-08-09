@@ -87,7 +87,7 @@ div:
     id: funk
 
   - img:
-    src: https:ixabay.org
+    src: https://pixabay.org/hello/1
 ```
 
 WTFPL licensed. Enjoy!
