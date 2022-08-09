@@ -35,10 +35,13 @@ All arrays are joined with empty strings.
 ### Usage
 
 ```js
+// Use 'h' as function to insert into DOM
 function renderList(items) {
+  // Automatically join arrays
   h('#list', h.ul(items.map((item) => h.li(h['!'](item.name)))))
 }
 
+// 'h' can be passed into pure functions, or included globally
 function renderSomething(h) {
   h.div('hello', { class: 'nisse' }, [
     h.span('What is going on?', {
@@ -48,6 +51,7 @@ function renderSomething(h) {
 
     h.img({ src: 'https://pixabay.org/hello/1' }),
 
+    // You can define functions inline for events
     h.a({
       href: '/hello',
       onclick: function (e) {
@@ -56,6 +60,7 @@ function renderSomething(h) {
       }
     }),
 
+    // Functions passed to 'script' will be converted to strings for client side use
     h.script([
       function doSomething() {
         console.log('What')
@@ -63,6 +68,12 @@ function renderSomething(h) {
 
       function doSomethingMore() {
         console.log('Do more')
+      },
+      // Can check if passed value is object and automatically JSON.stringify
+      {
+        state: {
+          items: [{ name: 'Santa' }, { name: 'Helper' } }]
+        }
       }
     ]),
 
