@@ -24,7 +24,7 @@ Tags are created by passing 3 parameters its function:
 - Attributes (Object)
 - More elements (Array)
 
-All strings are escaped unless you wrap them in h['!']:
+All strings are escaped unless you wrap them in `h['!']`:
 
 ```js
 h['!']('<div>Raw HTML</div>')
@@ -69,6 +69,7 @@ function renderSomething(h) {
       function doSomethingMore() {
         console.log('Do more')
       },
+
       // Can check if passed value is object and automatically JSON.stringify
       {
         state: {
