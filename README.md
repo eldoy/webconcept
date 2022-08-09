@@ -18,7 +18,7 @@ The proxy object lets you create tags by trying to access non-existent propertie
 
 Some properties have special handling, like `script`, which is used only to embed functions for use client side. Functions passed to `script` will be returned as a string.
 
-Tags are created by passing 3 parameters its function:
+Tags are created by passing 3 parameters to its function:
 
 - The content (string)
 - Attributes (Object)
