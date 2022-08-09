@@ -1,6 +1,6 @@
 # Web Concept
 
-Concept for a pure JS isomorphic HTML library.
+**Concept for a pure JS isomorphic HTML library.**
 
 Creating your HTML with Javascript functions has the following benefits:
 
