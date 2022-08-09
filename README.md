@@ -85,7 +85,7 @@ function renderSomething(h) {
 
 ### Variants
 
-A Weblang version has been explored, but is not really feasible.
+A Weblang version has been explored:
 
 ```yaml
 
@@ -100,6 +100,31 @@ div:
 
   - img:
     src: https://pixabay.org/hello/1
+  - a:
+    href: /hello
+    onclick: |
+      function (e) {
+        e.preventDefault()
+        alert('Clicked the link!')
+      }    
+
+  - script: 
+    - |
+      function doSomething() {
+        console.log('What')
+      }
+    - |        
+      function doSomethingMore() {
+        console.log('Do more')
+      }
+    - state:
+      items:
+        - name: Santa
+        - name: Helper              
+  - script:
+    @text: doSomething()
 ```
+`@text` could be replaced by `@html`, `@markdown` or whatever you want.
+
 
 WTFPL licensed. Enjoy!
