@@ -1,0 +1,15 @@
+{
+  "name": "webconcept",
+  "version": "0.1.0",
+  "description": "Concept for a pure JS isomorphic HTML library",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest --watch"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/eldoy/libinit"
+  },
+  "author": "Vidar Eldøy <vidar@eldoy.com>",
+  "license": "MIT"
+}
