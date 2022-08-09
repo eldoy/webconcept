@@ -43,7 +43,7 @@ function renderList(items) {
 
 // 'h' can be passed into pure functions, or included globally
 function renderSomething(h) {
-  h.div('hello', { class: 'nisse' }, [
+  return h.div('hello', { class: 'nisse' }, [
     h.span('What is going on?', {
       class: 'juletre',
       id: 'funk'
