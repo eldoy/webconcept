@@ -1,6 +1,6 @@
 # Web Concept
 
-Concept for a pure JS isomorphic HTML library.
+**Concept for a pure JS isomorphic HTML library.**
 
 Creating your HTML with Javascript functions has the following benefits:
 
@@ -43,7 +43,7 @@ function renderList(items) {
 
 // 'h' can be passed into pure functions, or included globally
 function renderSomething(h) {
-  h.div('hello', { class: 'nisse' }, [
+  return h.div('hello', { class: 'nisse' }, [
     h.span('What is going on?', {
       class: 'juletre',
       id: 'funk'
@@ -85,7 +85,7 @@ function renderSomething(h) {
 
 ### Variants
 
-A Weblang version has been explored, but is not really feasible.
+A Weblang version has been explored:
 
 ```yaml
 
@@ -100,7 +100,32 @@ div:
 
   - img:
     src: https://pixabay.org/hello/1
+  - a:
+    href: /hello
+    onclick: |
+      function (e) {
+        e.preventDefault()
+        alert('Clicked the link!')
+      }    
+
+  - script: 
+    - |
+      function doSomething() {
+        console.log('What')
+      }
+    - |        
+      function doSomethingMore() {
+        console.log('Do more')
+      }
+    - state:
+      items:
+        - name: Santa
+        - name: Helper              
+  - script:
+    @text: doSomething()
 ```
+`@text` could be replaced by `@html`, `@markdown` or whatever you want.
+
 
 The tags can also be separated as to support better code completion and editor tools:
 
