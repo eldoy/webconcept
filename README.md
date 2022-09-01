@@ -102,4 +102,61 @@ div:
     src: https://pixabay.org/hello/1
 ```
 
+The tags can also be separated as to support better code completion and editor tools:
+
+```js
+form({ onsubmit: () => false },
+  div({ id: 'search' },
+    input({
+      type: 'text',
+      placeholder: 'Firm...',
+      name: 'search',
+      onchange: 'state.search = this.value'
+    },
+    button({
+      id: 'button',
+      onclick: handleSearch()
+    }),
+    div({ id: 'toggler' },
+      a({ class: 'chevron', href: '#', onclick: handleToggleFilters() },
+        'Filters'
+      )
+    )
+  ),
+  script(
+    {
+      companies: async function() {
+        return await db('company').find()
+      }
+    },
+    function handleSearch(event) {
+      var target = event.currentTarget
+    },
+    function renderSomething() {
+      return div('hello')
+    },
+    function initPage() {
+      q('#app').innerHTML = renderSomething()
+    },
+    `initPage()`
+  )
+)
+
+// Instead of this:
+// return `
+//   <form onsubmit="return false">
+//     <div id="search">
+//       <input type="text" placeholder="Firm..." name="search" onchange="state.search = this.value">
+//       <button id="button" onclick="handleSearch(this, true)">Søk</button>
+//       <div id="toggler">
+//         <a class="chevron" href="javascript:void(0)" onclick="handleToggleFilters(this);return false">
+//           Filtre
+//         </a>
+//       </div>
+//     </div>
+//   </form>
+// `
+```
+
+
 WTFPL licensed. Enjoy!
